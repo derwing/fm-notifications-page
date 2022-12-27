@@ -1,7 +1,7 @@
 <section id="notifications" class="mt-5">
     <div class="grid">
         <div class="row justify-content-center">
-            <div class="col-7 text-justify">
+            <div class="col-12 p-3 col-md-7 text-justify">
                 <div class="card">
                     <div class="row notification controls mt-3 mx-3">
                         <div class="col">
@@ -15,9 +15,9 @@
                     <div class="card-body">
                         <!-- Notifications 3 Mark all as read  -->
                         <div class="accordion mb-2" id="accordionExample">
-                            <div class="accordion-item" *ngFor="let notification of notifications let i = index">
-                                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                                    <button class="accordion-button" [ngClass]="{'bg-white': notification.read}" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse'+i" aria-expanded="true" [attr.aria-controls]="'collapse'+i" (click)="markAsRed(i)">
+                            <div class="accordion-item mb-2 rounded border-0" *ngFor="let notification of notifications let i = index">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingOne"></h2>
+                                <button class="accordion-button shadow-none" [ngClass]="{'bg-white': notification.read}" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse'+i" aria-expanded="true" [attr.aria-controls]="'collapse'+i" (click)="markAsRed(i)">
                                         <img [src]="'../assets/images/' + notification.avatar" class="rounded me-3" width="45px">
                                         <div class="notification-header">
                                           <span class="text-dark fw-bold me-1"> {{notification.author}}</span>
@@ -30,12 +30,9 @@
                                            <span class="text-secondary">{{notification.time}}</span>
                                         </div>
                                 </button>
-                                </h2>
                                 <div [id]="'collapse'+i" class="accordion-collapse" [ngClass]="{'show': notification.open, 'collapse': !notification.open}" aria-labelledby="panelsStayOpen-headingOne">
-                                    <div class="accordion-body">
-                                        <strong class="">This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall
-                                        appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
-                                        <code>.accordion-body</code>, though the transition does limit overflow.
+                                    <div class="accordion-body border ms-5 mt-1">
+                                        {{notification.message || notification.title}}
                                     </div>
                                 </div>
                             </div>

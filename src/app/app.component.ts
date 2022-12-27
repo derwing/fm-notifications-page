@@ -95,9 +95,9 @@ export class AppComponent {
   ]
 
   markAsRed(id?: number) {
-    if (id && id >= 0) {
-      this.notifications[id].read = true;
-      this.notifications[id].open = true;
+    if (id! >= 0) {
+      this.notifications[id!].read = true;
+      this.notifications[id!].open = true;
       this.readNotificationNumber -= 1;
       return;
     }
@@ -110,6 +110,8 @@ export class AppComponent {
         element.open = false
 
     });
+
+
 
 
 
