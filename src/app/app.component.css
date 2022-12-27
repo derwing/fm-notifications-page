@@ -1,0 +1,28 @@
+.lighGreyBlue {
+    color: var(--very-light-grayish-blue);
+}
+
+.notification-title {
+    color: var(--very-dark-blue);
+}
+
+.notification-badge {
+    background-color: var(--very-dark-blue)!important;
+    ;
+}
+
+.accordion-button {
+    font-size: 16px!important;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--very-light-grayish-blue);
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,...");
+}
+
+.accordion-button::after {
+    background-image: url("data:image/svg+xml,...");
+}
