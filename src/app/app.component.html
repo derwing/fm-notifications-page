@@ -22,7 +22,7 @@
                                         <div class="notification-header">
                                           <span class="text-dark fw-bold me-1"> {{notification.author}}</span>
                                           <span class="text-secondary me-1">{{notification.title}}</span>
-                                          <span class="text-secondary subtitle fw-bold">{{notification.subtitle}}</span>
+                                          <span class="subtitle fw-bold" [ngClass]="{'text-primary': notification.subtitle === 'Chess Club', 'text-secondary': notification.subtitle != 'Chess Club'}">{{notification.subtitle}}</span>
                                           <span class="material-symbols-sharp text-danger align-middle" *ngIf="!notification.read">
                                             fiber_manual_record
                                            </span>
